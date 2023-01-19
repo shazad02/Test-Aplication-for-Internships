@@ -57,14 +57,14 @@ class Screen2 extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "Selected ",
                       style: TextStyle(fontSize: 24),
                     ),
                     Text(
                       name,
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -79,7 +79,7 @@ class Screen2 extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return Screen3();
+                      return const Screen3();
                     }));
                   },
                   style: ElevatedButton.styleFrom(
@@ -87,7 +87,7 @@ class Screen2 extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       )),
-                  child: Text(
+                  child: const Text(
                     'Choose a User',
                     style: TextStyle(fontSize: 14),
                   ),

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class Screen3 extends StatefulWidget {
-  Screen3({Key? key}) : super(key: key);
+  const Screen3({Key? key}) : super(key: key);
 
   @override
   State<Screen3> createState() => _Screen3State();
@@ -65,10 +65,10 @@ class _Screen3State extends State<Screen3> {
             )
           : Center(
               child: _loading
-                  ? CircularProgressIndicator()
+                  ? const CircularProgressIndicator()
                   : ElevatedButton(
-                      child: const Text("fetch users"),
                       onPressed: loadUserList,
+                      child: const Text("Load users"),
                     ),
             ),
     );
