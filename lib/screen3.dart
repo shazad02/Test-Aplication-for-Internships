@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:aplication/support2.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -55,7 +56,16 @@ class _Screen3State extends State<Screen3> {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      title: Text(_users[index]['firstName']),
+                      title: GestureDetector(
+                        child: Text(_users[index]['firstName']),
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return Screen4(
+                                pageName: _users[index]['firstName']);
+                          }));
+                        },
+                      ),
                       subtitle: Text(_users[index]['email']),
                       trailing: Text(_users[index]['phone']),
                     ),
