@@ -4,7 +4,7 @@ Aplikasi yang dibuat untuk mengetest kemampuan dalam flutter
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+API from https://dummyjson.com/users
 
 ##Soal yang di berikan adalah
 Create iOS / Android application with this specification:
