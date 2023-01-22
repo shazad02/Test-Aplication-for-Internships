@@ -1,3 +1,5 @@
+import 'package:aplication/componen/text_palidomen.dart';
+import 'package:aplication/componen/textfiled.dart';
 import 'package:aplication/screen2.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -60,23 +62,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: Column(
                       children: [
                         Form(
-                          child: TextFormField(
-                            controller: namecontroler,
-                            decoration: InputDecoration(
-                              hintStyle: const TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w500,
-                              ),
-                              fillColor: Colors.white,
-                              filled: true,
-                              hintText: "Name",
-                              contentPadding: const EdgeInsets.all(10),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(12),
-                                borderSide: BorderSide.none,
-                              ),
-                            ),
-                          ),
+                          child: TextFiled(namecontroler: namecontroler),
                         ),
                         SizedBox(
                           height:
@@ -84,63 +70,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         Form(
                           key: _formState,
-                          child: TextFormField(
-                            controller: palindromecontroler,
-                            validator: (value) {
-                              if (value == value?.split("").reversed.join()) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Container(
-                                      padding: const EdgeInsets.all(16),
-                                      decoration: const BoxDecoration(
-                                        color: Colors.grey,
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(20),
-                                        ),
-                                      ),
-                                      child: const Text("palindrome"),
-                                    ),
-                                    behavior: SnackBarBehavior.floating,
-                                    backgroundColor: Colors.transparent,
-                                    elevation: 0,
-                                  ),
-                                );
-                              } else {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Container(
-                                      padding: const EdgeInsets.all(16),
-                                      decoration: const BoxDecoration(
-                                        color: Colors.grey,
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(20),
-                                        ),
-                                      ),
-                                      child: const Text("Not palindrome"),
-                                    ),
-                                    behavior: SnackBarBehavior.floating,
-                                    backgroundColor: Colors.transparent,
-                                    elevation: 0,
-                                  ),
-                                );
-                              }
-                              return null;
-                            },
-                            decoration: InputDecoration(
-                              hintStyle: const TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w500,
-                              ),
-                              fillColor: Colors.white,
-                              filled: true,
-                              hintText: "Palindrome",
-                              contentPadding: const EdgeInsets.all(10),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(12),
-                                borderSide: BorderSide.none,
-                              ),
-                            ),
-                          ),
+                          child: TextFiledPalindome(
+                              palindromecontroler: palindromecontroler),
                         ),
                         SizedBox(
                           height:
