@@ -11,6 +11,9 @@ class TextFiledPalindome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(
+        color: Theme.of(context).splashColor,
+      ),
       controller: palindromecontroler,
       validator: (value) {
         if (value == value?.split("").reversed.join()) {
@@ -57,7 +60,7 @@ class TextFiledPalindome extends StatelessWidget {
           color: Colors.grey,
           fontWeight: FontWeight.w500,
         ),
-        fillColor: Colors.white,
+        fillColor: Theme.of(context).cardColor,
         filled: true,
         hintText: "Palindrome",
         contentPadding: const EdgeInsets.all(10),

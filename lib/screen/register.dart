@@ -1,8 +1,8 @@
 import 'package:aplication/componen/text_palidomen.dart';
 import 'package:aplication/componen/textfiled.dart';
-import 'package:aplication/screen2.dart';
+import 'package:aplication/screen/screen2.dart';
+import 'package:aplication/util/dimensions.dart';
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -42,13 +42,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(360),
-                    color: Colors.white30,
+                    color: Theme.of(context).cardColor,
                   ),
                   height: MediaQuery.of(context).size.height * 1.5 / 10,
                   width: MediaQuery.of(context).size.height * 1.5 / 10,
                   child: Icon(
                     Icons.person_add,
-                    color: Colors.white,
+                    color: Theme.of(context).splashColor,
                     size: MediaQuery.of(context).size.height * 0.5 / 10,
                   ),
                 ),
@@ -56,7 +56,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: MediaQuery.of(context).size.height * 0.4 / 10,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(33.0),
+                  padding:
+                      const EdgeInsets.all(Dimensions.PADDING_SIZE_EXTRA_LARGE),
                   child: SizedBox(
                     width: double.infinity,
                     child: Column(
@@ -86,7 +87,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               if (_formState.currentState!.validate()) {}
                             },
                             style: ElevatedButton.styleFrom(
-                                backgroundColor: HexColor("#2B637B"),
+                                backgroundColor: Theme.of(context).canvasColor,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(12),
                                 )),
@@ -111,7 +112,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               }));
                             },
                             style: ElevatedButton.styleFrom(
-                                backgroundColor: HexColor("#2B637B"),
+                                backgroundColor:
+                                    Theme.of(context).disabledColor,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(12),
                                 )),

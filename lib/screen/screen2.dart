@@ -1,4 +1,5 @@
-import 'package:aplication/screen3.dart';
+import 'package:aplication/screen/screen3.dart';
+import 'package:aplication/util/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -12,12 +13,14 @@ class Screen2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).disabledColor,
         centerTitle: true,
         title: const Text(
           'Second Screen',
           style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+          ),
         ),
         leading: IconButton(
           onPressed: () {
@@ -31,7 +34,7 @@ class Screen2 extends StatelessWidget {
         elevation: 1,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(Dimensions.PADDING_SIZE_DEFAULT),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -71,7 +74,7 @@ class Screen2 extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
               child: SizedBox(
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.50 / 10,
@@ -83,7 +86,7 @@ class Screen2 extends StatelessWidget {
                     }));
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: HexColor("#2B637B"),
+                      backgroundColor: Theme.of(context).disabledColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       )),

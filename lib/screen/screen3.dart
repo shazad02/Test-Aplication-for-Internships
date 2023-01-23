@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'package:aplication/support2.dart';
+import 'package:aplication/screen/support2.dart';
+import 'package:aplication/util/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -19,12 +20,11 @@ class _Screen3State extends State<Screen3> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).disabledColor,
         centerTitle: true,
         title: const Text(
           'Thrid Screen',
-          style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         leading: IconButton(
           onPressed: () {
@@ -48,7 +48,8 @@ class _Screen3State extends State<Screen3> {
                     vertical: 5.0,
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding:
+                        const EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
                     child: ListTile(
                       leading: ClipOval(
                         child: Image.network(
@@ -62,7 +63,11 @@ class _Screen3State extends State<Screen3> {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
                             return Screen4(
-                                pageName: _users[index]['firstName']);
+                              pageName: _users[index]['firstName'],
+                              imageName: _users[index]['image'],
+                              emailName: _users[index]['email'],
+                              phoneName: _users[index]['phone'],
+                            );
                           }));
                         },
                       ),
@@ -77,8 +82,16 @@ class _Screen3State extends State<Screen3> {
               child: _loading
                   ? const CircularProgressIndicator()
                   : ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Theme.of(context).disabledColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          )),
                       onPressed: loadUserList,
-                      child: const Text("Load users"),
+                      child: const Text(
+                        "Load users",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
             ),
     );

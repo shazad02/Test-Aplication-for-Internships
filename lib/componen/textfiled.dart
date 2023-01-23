@@ -11,13 +11,16 @@ class TextFiled extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(
+        color: Theme.of(context).splashColor,
+      ),
       controller: namecontroler,
       decoration: InputDecoration(
         hintStyle: const TextStyle(
           color: Colors.grey,
           fontWeight: FontWeight.w500,
         ),
-        fillColor: Colors.white,
+        fillColor: Theme.of(context).cardColor,
         filled: true,
         hintText: "Name",
         contentPadding: const EdgeInsets.all(10),

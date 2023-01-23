@@ -1,4 +1,6 @@
-import 'package:aplication/register.dart';
+import 'package:aplication/screen/register.dart';
+import 'package:aplication/theme/dark_theme.dart';
+import 'package:aplication/theme/light_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,9 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Aplication',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      themeMode: ThemeMode.system,
+      darkTheme: dark,
+      theme: light,
       home: const RegisterScreen(),
     );
   }
