@@ -4,7 +4,7 @@ ThemeData dark = ThemeData(
   canvasColor: const Color.fromARGB(255, 21, 86, 109),
   splashColor: Colors.white,
   primaryColor: const Color(0xFF8CE2FB),
-  secondaryHeaderColor: Color.fromARGB(255, 37, 150, 190),
+  secondaryHeaderColor: const Color.fromARGB(255, 37, 150, 190),
   disabledColor: const Color(0xFF6f7275),
   errorColor: const Color(0xFFdd3135),
   brightness: Brightness.dark,

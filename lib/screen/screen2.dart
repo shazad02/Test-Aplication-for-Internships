@@ -1,7 +1,6 @@
 import 'package:aplication/screen/screen3.dart';
 import 'package:aplication/util/dimensions.dart';
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 // ignore: must_be_immutable
 class Screen2 extends StatelessWidget {
