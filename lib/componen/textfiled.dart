@@ -22,7 +22,7 @@ class TextFiled extends StatelessWidget {
         ),
         fillColor: Theme.of(context).cardColor,
         filled: true,
-        hintText: "Name",
+        hintText: "Nama",
         contentPadding: const EdgeInsets.all(10),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
