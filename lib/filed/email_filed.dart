@@ -26,6 +26,7 @@ class EmailWidget extends StatelessWidget {
             ),
             Text(
               emailName,
+              maxLines: 100,
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ],
