@@ -9,3 +9,5 @@ API from https://dummyjson.com/users
 ## Terdapat form palindome untuk cek kata "palindome"
 
 ## Aplikasi ini dapat memanggil data keseluruhan dan mengambil data 1 dari AP
+
+Jika aplikasi tidak meload item dari api, pengguna dapat meRun aplikasi di emulator. Jika tidak bisa load API di karenakan jaringannya
